@@ -77,8 +77,30 @@ Ship something real at the end of every phase. Never have broken state on main.
 
 ---
 
-## Phase 6 — Deploy to Production
-- Create `.github/workflows/hugo.yml`:
+## ✅ Phase 6 — Deploy to Production
+
+### Manual setup (done once by you in GitHub)
+
+1. **Create the repository** at https://github.com/new
+   - Name: `sumanthic` (must match the org/user name for GitHub Pages to serve at `sumanthic.github.io`)
+   - Visibility: Public (required for free GitHub Pages)
+   - No README, no .gitignore — repo is already initialised locally
+2. **Push the repo** for the first time: `git remote add origin https://github.com/sumanthic/sumanthic.git && git push -u origin main`
+3. **Enable GitHub Pages**
+   - Go to repo → Settings → Pages
+   - Under "Build and deployment" → Source: select **GitHub Actions**
+   - Do not select a branch — the workflow handles deployment
+4. **Verify Actions are enabled**
+   - Go to repo → Settings → Actions → General
+   - Confirm "Allow all actions and reusable workflows" is selected
+   - The `github-pages` environment is created automatically on first successful deploy
+
+### Code changes
+
+- Add `public/` to `.gitignore` — CI generates it fresh; never commit build output
+- Remove the dummy code block added to `content/posts/hello.md` during Phase 4 testing
+- Create `.github/workflows/hugo.yml` using GitHub's official Pages deploy actions
+  (uses `pages: write` + `id-token: write` — no personal token needed):
   ```yaml
   name: Deploy Hugo site to GitHub Pages
 
@@ -87,27 +109,30 @@ Ship something real at the end of every phase. Never have broken state on main.
       branches: [main]
 
   permissions:
-    contents: write
+    contents: read
+    pages: write
+    id-token: write
 
   jobs:
     deploy:
       runs-on: ubuntu-latest
+      environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
       steps:
         - uses: actions/checkout@v4
-          with:
-            submodules: true
         - uses: peaceiris/actions-hugo@v3
           with:
-            hugo-version: '0.125.0'
+            hugo-version: '0.160.1'
             extended: true
         - run: hugo --minify
-        - uses: peaceiris/actions-gh-pages@v3
+        - uses: actions/upload-pages-artifact@v3
           with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: ./public
+            path: ./public
+        - uses: actions/deploy-pages@v4
+          id: deployment
   ```
-- Enable GitHub Pages on `gh-pages` branch in repo Settings → Pages
-- Confirm `baseURL = "https://sumanthic.github.io"` in `hugo.toml`
+- Confirm `baseURL = "https://sumanthic.github.io"` in `hugo.toml` ✓ (already set)
 
 **Done when:** pushing to `main` auto-deploys to https://sumanthic.github.io.
 
