@@ -30,6 +30,39 @@ main {
   padding: 0 1.25rem;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1.25rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 1rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+header nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: var(--link);
+}
+
+footer {
+  max-width: 720px;
+  margin: 3rem auto 2rem;
+  padding: 1rem 1.25rem 0;
+  border-top: 1px solid var(--border);
+  font-size: 0.875rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
 pre {
   background: var(--code-bg);
   padding: 1rem 1.25rem;
