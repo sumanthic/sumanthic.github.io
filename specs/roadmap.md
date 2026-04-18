@@ -41,7 +41,7 @@ Ship something real at the end of every phase. Never have broken state on main.
 
 ---
 
-## Phase 4 — Typography & Base CSS
+## ✅ Phase 4 — Typography & Base CSS
 - `static/css/main.css` linked in `baseof.html`
 - **720px** max-width content column, centered
 - System font stack (`-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`)
