@@ -21,7 +21,7 @@ Ship something real at the end of every phase. Never have broken state on main.
 
 ---
 
-## Phase 2 — Post Archive Page
+## ✅ Phase 2 — Post Archive Page
 - `layouts/_default/list.html`: chronological list of posts grouped by year
 - Each row: `MMM DD   Post Title` (no series icon yet — that's Parking Lot)
 - No styling yet — just semantic HTML (`<ul>`, `<time>`, `<a>`)
