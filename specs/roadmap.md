@@ -5,7 +5,7 @@ Ship something real at the end of every phase. Never have broken state on main.
 
 ---
 
-## Phase 1 — Scaffold & Hello World
+## ✅ Phase 1 — Scaffold & Hello World
 - `hugo new site sumanthic` (repo root = hugo site)
 - `hugo.toml` with concrete values:
   ```toml
