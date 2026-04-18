@@ -31,7 +31,7 @@ Ship something real at the end of every phase. Never have broken state on main.
 
 ---
 
-## Phase 3 — Single Post Page
+## ✅ Phase 3 — Single Post Page
 - `layouts/_default/single.html`: title, date, category label, post body (markdown rendered)
 - Metadata row: `Dec 25 2025  [category]` — mirrors what vanducng.dev shows per post
 - Prev/Next navigation: ordered by date, newest post = "next", oldest = "prev"
