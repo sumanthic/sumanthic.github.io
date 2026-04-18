@@ -1,0 +1,13 @@
+{{ define "main" }}
+<main>
+  <h1>Categories</h1>
+  <ul>
+    {{ range .Data.Terms.Alphabetical }}
+    <li>
+      <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+      <span>({{ .Count }})</span>
+    </li>
+    {{ end }}
+  </ul>
+</main>
+{{ end }}

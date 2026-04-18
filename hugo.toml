@@ -1,3 +1,9 @@
 title        = "sumanthic"
 baseURL      = "https://sumanthic.github.io"
 languageCode = "en-us"
+
+[markup.highlight]
+  style      = "github"
+  lineNos    = false
+  codeFences = true
+  noClasses  = true

@@ -138,7 +138,9 @@ Ship something real at the end of every phase. Never have broken state on main.
 
 ---
 
-## Phase 7 — Dark Mode (System Preference)
+## ✅ Phase 7 — Dark Mode, Syntax Highlighting & Categories
+
+### Dark Mode
 - Add `@media (prefers-color-scheme: dark)` block to `main.css`:
   ```css
   @media (prefers-color-scheme: dark) {
@@ -153,11 +155,7 @@ Ship something real at the end of every phase. Never have broken state on main.
   ```
 - No JavaScript, no toggle button — OS setting controls it
 
-**Done when:** blog switches palette automatically with OS dark/light setting.
-
----
-
-## Phase 8 — Syntax Highlighting
+### Syntax Highlighting
 - Add to `hugo.toml`:
   ```toml
   [markup.highlight]
@@ -167,19 +165,15 @@ Ship something real at the end of every phase. Never have broken state on main.
     noClasses  = true
   ```
 - Verify fenced code blocks (` ```go `, ` ```python `, etc.) render with github theme colors
-- **Known limitation:** `github` theme is light-background only — code blocks will look slightly off in dark mode until the dual-theme fix is pulled from Parking Lot
+- **Known limitation:** `github` theme is light-background only — code blocks look slightly off in dark mode until the dual-theme fix is pulled from Parking Lot
 
-**Done when:** code blocks in posts have syntax colors matching the github theme in light mode.
-
----
-
-## Phase 9 — Categories
+### Categories
 - `categories` already appears in post front matter from Phase 3 — now make it navigable
 - `layouts/_default/terms.html` — lists all category names with post counts
 - `layouts/_default/taxonomy.html` — all posts for a given category
 - Update `header.html`: add Categories link (`/categories/`) to nav
 
-**Done when:** `/categories/` lists all categories; clicking one shows filtered posts; nav has Categories link.
+**Done when:** blog switches palette automatically with OS dark/light setting; code blocks have syntax colors in light mode; `/categories/` lists all categories with a nav link.
 
 ---
 
