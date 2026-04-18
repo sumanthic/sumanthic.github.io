@@ -64,7 +64,7 @@ Ship something real at the end of every phase. Never have broken state on main.
 
 ---
 
-## Phase 5 — Navigation Header & Footer
+## ✅ Phase 5 — Navigation Header & Footer
 - `layouts/partials/header.html`
   - Left: `< sumanthic />` (monospace, links to `/`)
   - Right: Posts link (`/posts/`) · About link (`https://github.com/sumanthic` — external, opens GitHub profile until About page exists)
