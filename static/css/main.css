@@ -27,7 +27,7 @@ a {
 main {
   max-width: 720px;
   margin: 0 auto;
-  padding: 0 1.25rem;
+  padding: 2rem 1.25rem 4rem;
 }
 
 header {
@@ -84,6 +84,71 @@ pre code {
   font-size: 1em;
 }
 
+/* Archive */
+.archive-year {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 2.5rem 0 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+
+h2.archive-year {
+  font-size: 1rem;
+}
+
+.archive-list {
+  margin-bottom: 0.25rem;
+}
+
+.archive-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+}
+
+.archive-row:hover span {
+  color: var(--link);
+}
+
+.archive-row time {
+  flex-shrink: 0;
+  font-size: 0.875rem;
+  opacity: 0.45;
+  min-width: 4rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Single post */
+.post-meta {
+  font-size: 0.875rem;
+  opacity: 0.55;
+  margin: 0.25rem 0 2.5rem;
+}
+
+article h1, article h2, article h3 {
+  margin-top: 2rem;
+}
+
+article p {
+  margin: 1.25rem 0;
+}
+
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --bg:       #0d1117;
@@ -118,4 +183,6 @@ pre code {
   margin-left: 1.5rem;
   padding: 0;
   line-height: 1;
+  color: var(--text);
+  opacity: 0.6;
 }

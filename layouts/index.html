@@ -1,5 +1,16 @@
 {{ define "main" }}
 <main>
-  <h1>{{ .Site.Title }}</h1>
+  {{ $posts := where site.RegularPages "Section" "posts" }}
+  {{ range $posts.GroupByDate "2006" }}
+  <h2 class="archive-year">{{ .Key }}</h2>
+  <div class="archive-list">
+    {{ range .Pages }}
+    <a class="archive-row" href="{{ .Permalink }}">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02" }}</time>
+      <span>{{ .Title }}</span>
+    </a>
+    {{ end }}
+  </div>
+  {{ end }}
 </main>
 {{ end }}
