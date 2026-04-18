@@ -64,26 +64,20 @@ Ship something real at the end of every phase. Never have broken state on main.
 
 ---
 
-## Phase 5 — Navigation Header
+## Phase 5 — Navigation Header & Footer
 - `layouts/partials/header.html`
-- Left: `< sumanthic />` (monospace, links to `/`)
-- Right: Posts link (`/posts/`) · About link (`https://github.com/sumanthic` — external, opens GitHub profile until About page exists)
-- Minimal — no dropdowns, no icons
-
-**Done when:** every page has a consistent nav bar with correct links.
-
----
-
-## Phase 6 — Footer
+  - Left: `< sumanthic />` (monospace, links to `/`)
+  - Right: Posts link (`/posts/`) · About link (`https://github.com/sumanthic` — external, opens GitHub profile until About page exists)
+  - Minimal — no dropdowns, no icons
 - `layouts/partials/footer.html`
-- `© {{ now.Year }} sumanthic` · GitHub link (`https://github.com/sumanthic`)
-- One line, no clutter
+  - `© {{ now.Year }} sumanthic` · GitHub link (`https://github.com/sumanthic`)
+  - One line, no clutter
 
-**Done when:** every page has a footer.
+**Done when:** every page has a consistent nav bar with correct links and a footer.
 
 ---
 
-## Phase 7 — Deploy to Production
+## Phase 6 — Deploy to Production
 - Create `.github/workflows/hugo.yml`:
   ```yaml
   name: Deploy Hugo site to GitHub Pages
@@ -119,7 +113,7 @@ Ship something real at the end of every phase. Never have broken state on main.
 
 ---
 
-## Phase 8 — Dark Mode (System Preference)
+## Phase 7 — Dark Mode (System Preference)
 - Add `@media (prefers-color-scheme: dark)` block to `main.css`:
   ```css
   @media (prefers-color-scheme: dark) {
@@ -138,7 +132,7 @@ Ship something real at the end of every phase. Never have broken state on main.
 
 ---
 
-## Phase 9 — Syntax Highlighting
+## Phase 8 — Syntax Highlighting
 - Add to `hugo.toml`:
   ```toml
   [markup.highlight]
@@ -154,7 +148,7 @@ Ship something real at the end of every phase. Never have broken state on main.
 
 ---
 
-## Phase 10 — Categories
+## Phase 9 — Categories
 - `categories` already appears in post front matter from Phase 3 — now make it navigable
 - `layouts/_default/terms.html` — lists all category names with post counts
 - `layouts/_default/taxonomy.html` — all posts for a given category
@@ -173,7 +167,7 @@ Things that can earn a phase later, once the core is solid:
 - Reading time estimate (`{{ .ReadingTime }} min read`)
 - Series grouping — named multi-post collections with their own index page
 - Series icon on archive rows (the stacked-layers icon vanducng shows per post)
-- Dark/light toggle button (JS-based; Phase 8 covers CSS-only auto-detection first)
+- Dark/light toggle button (JS-based; Phase 7 covers CSS-only auto-detection first)
 - Dual syntax highlight themes — `github` (light) + `github-dark` (dark) switching via CSS media query
 - Search (requires JS + index — add last)
 - Social share buttons
