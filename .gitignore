@@ -1,0 +1,8 @@
+public/
+.hugo_build.lock
+resources/_gen/
+*.png
+*.jpg
+*.jpeg
+.playwright-mcp/
+.DS_Store
