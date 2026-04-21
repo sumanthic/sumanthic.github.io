@@ -1,3 +1,8 @@
+---
+title: "RAG & Semantic Search"
+date: 2026-04-20
+---
+
 # 🧠 RAG & Semantic Search — Personal Notes
 
 ---
